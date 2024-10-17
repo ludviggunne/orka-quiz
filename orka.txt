@@ -33,3 +33,159 @@
 
 	~PBC: Product Breakdown Strcture~:
 		Översikt över de delar av projektet som ska genomföras
+
+* Vilka är några delar av en projektplan som är lätta att missa?
+	~Ställtid~
+		Omställningstid mellan olika uppgifter/projekt
+		Indirekttid, t.ex. möten
+	Ledning & administration
+
+* Vad är en nätplan?
+	En ~nätplan~ är ett diagram över arbetsuppgifter
+	där man länkar samman uppgifter som är beroende av varandra
+
+* Vad är den kritiska linjen?
+	Den ~kritiska linjen~ baseras på den längsta kedjan i
+	~nätplanen~, och används för att uppskatta ett projekts
+	tidsåtgång.
+
+* Vad är en resursplan?
+	En ~resursplan~ är ett sätt att fördela resurser i projekt
+	över tid, med hjälp av exempelvis ett ~resurshistogram~.
+
+* Vad ska ingå i projektplan gällande personella resurser?
+	- Projektteamet
+	- Styrgrupp
+	- Beställare
+	- Projektledare
+
+* Nämn fyra vanliga former av projektorganisation
+	- Funktionell organisation
+	- Matrisorganisation med lättvikts-PL
+	- Matrisorganisation med tungvikts-PL
+	- Projektorganisation
+
+* Vad innebär funktionell organisation?
+	Projekt inom enskilda avdelningar
+	Svårt att driva flerfunktionella projekt
+
+* Vad innebär matrisorganisation med lättvikts-PL?
+	PL koordinerar, med kontaktperson i varje avdelning
+
+* Vad innebär matrisorganisation med tungvikts-PL?
+	PL är överordnad linjechefen
+	Avdelningarna levererar efter PL:s behov
+	Projektdimension går före linjeverksamheten
+	Bra i produktutveckling
+
+* Vad innebär projektorganisation?
+	Resurser lyfts ur avdelningar för sepcifika projekt
+
+* Vad är ett program?
+	En samling relaterade ~projekt~.
+
+* Vad är programchef/projektkontorschef?
+	Ansvara för alla ~program~.
+
+* Vad är ett projektkontor?
+	Enhet med specialkunskaper i projekt/programledning
+	Ansvarar för program
+	Styr inte, men länkar ihop olika delar av projekt
+	Involverar företagsledningen i projektarbetet
+
+* Vad är en styrgrupp?
+	Styrelse för projektet
+	Fattar ~övergripande~ beslut gällande projekt, t.ex. budget
+	Respresenterar både projektarbetare och ~kund~
+
+* Vad är en referensgrupp?
+	Bidrar med ~expertis~, men fattar inga beslut för projektet
+
+* Vad innebär projektanställning?
+	Särskild form av tillfällig anställning
+
+* Vad är viktigt tt tänka på när man planerar/genomför möten?
+	- Planera bara ett möte om det finns ett ~tydligt syfte~ med mötet
+	- Det ska finnas ~dokumentärenden~, som skickas ut i förväg så alla är väl förberedda
+	- Det ska finnas ~öppna punkter~, och öppet för individuell diskussion
+	- Ta det ~viktigaste först~
+	- Lista åtgärder med ~datum och ansvarig person~, så alla vet vad de ska göra
+	- ~Dokumentera~
+	- Det ska vara tydligt vad som har beslutats vid mötets slut
+
+* Vad är kännetecknande för högpresterande team?
+	- Tydlig och gemensam målbild
+	- Ansvarstagande
+	- Stödjande ledarskap
+	- Mycket kommunikation
+
+* Vilka är Belbins 9 teamroller?
+	- ~Idégivare~
+	- ~Resursfixare~
+	- ~Koordinator~
+	- ~Formare/pådrivare~
+	- ~Värderare~
+	- ~Lagspelare/sammanhållare~
+	- ~Verkställare~
+	- ~Slutförare~
+	- ~Specialist~
+
+* Beskriv tre teamarkitekturer.
+	~Rolldifferentierade team~
+		T.ex. restaurangpersonal
+		Specialicerade yrken inom teamet
+		Regelstyrt
+		Begränsad kommunikation
+		Låg flexibilitet
+
+	~Rollintegrerade~
+		Överlappande arbetsuppgifter
+		Parallellt, delvis integrerat arbete
+		Viktigt med kommunikation
+		Hög flexibilitet
+
+	~Rollkompletterande~
+		Ömsesidiga relationer
+		Alla kan arbeta med alla uppgifter
+		Mycket integrerat arbete
+		Hög grad av autonomi
+		Viktigt med kommunikation
+
+* Beskriv stegen i Tuckmans grupputvecklingsmodell.
+	1. ~Forming~
+		Ledare tar initiativ och är styrande
+		Introducerar problem/uppgift
+
+	2. ~Storming~
+		Diskutera fritt om hur man ska lösa uppgiften
+		Ledare tar ett steg tillbaka
+
+	3. ~Norming~
+		Gruppen bygger en kultur
+		Bör ledaren inte involveras i
+
+	4. ~Performing~
+		Själva uppgiften ska utföras
+
+	5. ~Adjourning~
+		Avsluta projektet
+
+* Vad är kännetecknande för stödjande/faciliterande ledarskap?
+	- ~Relationsbyggande~
+	- ~Konflikthantering~
+	- ~Feedback~
+	- ~Kulturskapande~
+
+* Vilka olika dimensioner behöver hanteras inom projektledarskap?
+	- ~Uppåt & utåt~: involvera intressenter
+	- ~Framåt & båket~: håll projektarbetet på rätt spår
+	- ~Nedåt & inåt~: fokusera på resultat
+
+* Vad anses vikitigt för arbetstillfredställelse inom projektarbete?
+	- Rätt förväntningar
+	- Ett projekt åt gången
+	- Tydligt ledarskap
+	- Utmanande arbete
+	- Kunna lägga upp tid själv
+	- Inte för långt projekt
+	- Tid för lärande och återhämtning
