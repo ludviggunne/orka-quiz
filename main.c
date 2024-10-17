@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <errno.h>
+#include <regex.h>
 
 #define RED     "\x1b[31m"
 #define GREEN   "\x1b[32m"
@@ -24,6 +25,8 @@ struct termios new, old;
 FILE *file;
 char *fname = NULL;
 int lineno = 0;
+char *pattern = NULL;
+regex_t regex;
 
 void usage(const char *name, FILE *f)
 {
@@ -31,7 +34,8 @@ void usage(const char *name, FILE *f)
 	fprintf(f, "Options:\n"
 	           "\t-q <character> \tSpecify character to indicate start of a question line (default: '*')\n"
 	           "\t-h <character> \tSpecify character that surrounds a highlighted word (default: '~')\n"
-	           "\t-l <number>    \tSkip to a specific line\n");
+	           "\t-l <number>    \tSkip to a specific line\n"
+		   "\t-r <pattern>   \tJump to first line matching a regular expression\n");
 }
 
 void restore_term(void)
@@ -186,6 +190,20 @@ int main(int argc, char **argv)
 				start = atoi(arg);
 				start--;
 				break;
+			case 'r':
+				arg++;
+				if (strlen(arg) == 0)
+				{
+					argv++;
+					arg = *argv;
+				}
+				if (!arg)
+				{
+					usage(name, stderr);
+					exit(1);
+				}
+				pattern = strdup(arg);
+				break;
 			default:
 				usage(name, stderr);
 				exit(1);
@@ -200,6 +218,17 @@ int main(int argc, char **argv)
 		usage(name, stderr);
 		exit(1);
 	}
+
+	/* Compile regex */
+	int err = 0;
+	if (pattern && (err = regcomp(&regex, pattern, REG_ICASE | REG_NOSUB | REG_NEWLINE)))
+	{
+		char buf[512];
+		regerror(err, &regex, buf, sizeof(buf));
+		fprintf(stderr, "failed to compile regex: %s\n", buf);
+		exit(1);
+	}
+
 
 	/* Open file for reading */
 	file = fopen(fname, "r");
@@ -225,6 +254,15 @@ int main(int argc, char **argv)
 		lineno++;
 		if (lineno < start)
 			continue;
+
+		if (pattern)
+		{
+			regmatch_t unused_regmatch;
+			if (regexec(&regex, line, 1, &unused_regmatch, 0) == REG_NOMATCH)
+				continue;
+			pattern = NULL;
+		}
+
 		if (line[0] == qc)
 		{
 			is_q = 1;
