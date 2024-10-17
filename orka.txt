@@ -189,3 +189,69 @@
 	- Kunna lägga upp tid själv
 	- Inte för långt projekt
 	- Tid för lärande och återhämtning
+
+* När sker riskanalys?
+	Under ~förstudien~
+
+* Vad finns det för inställningar till risk?
+	- Riskaversion
+	- Riskneutralitet
+	- Risksökare
+
+* Vad finns det för typer av risker?
+	- ~Force majeur~ - t.ex. lagändringar
+	- ~Externa~ - t.ex. råmaterialtillgång
+	- ~Interna~ - icketekniska, t.ex. avtal
+	- ~Tekniska~
+	- ~Legala~ - t.ex. patenträttigheter, rättstvister
+
+* Vad är de olika stegen i riskhanteringsprocessen?
+	1. Identifiera
+	2. Analysera
+	3. Prioritera och kartlägg
+	4. Förebygg
+	5. Övervaka
+
+* Vilka metoder finns för att identifier risker?
+	- Minirisk
+	- SWOT
+	- Successiv-metoden
+	- Matematiska modeller
+	- Scenarier
+
+* Hur fungerar minirisk?
+	Uppskatta ~konsekvens~ & ~sannolikhet~
+	Allvarlig konsekvens + hög sannolikhet = ånej!
+	Sannolikhet uppskattas i %
+	Konsekvens betygsätts 1-5
+
+* Vad innebär intressentanalys?
+	Analysera externa relationer.
+
+* Vad är en intressent?
+	Organisation/människa som ~berörs eller påverkas av projektet~.
+
+* Ge några exempel på möjliga intressenter i ett projekt.
+	- Ledningen
+	- Ägare/kunder
+	- Målgrupp
+	- Myndigheter
+	- Intresseorganisationer
+	- Fack
+
+* Vad är en intressentkarta?
+	En visualisering/diagram av externa relationer/intressenter
+
+* Hur utförs själva intressentanalysen?
+	~Samla information~:
+		t.ex. genom intervjuer eller tidigare erfarenhet
+
+	~Analysera styrkor/svagheter~ hos intressenter:
+		t.ex. befogenheter, kunskap, inflytande
+
+	~Analusera intressenternas strategi~.
+
+	~Förutsäg intressenternas beteende~:
+		Normalfall?
+		Krissituation?
+	
