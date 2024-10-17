@@ -4,6 +4,7 @@
 #include <assert.h>
 #include <string.h>
 #include <stdlib.h>
+#include <errno.h>
 
 #define RED     "\x1b[31m"
 #define GREEN   "\x1b[32m"
@@ -21,6 +22,8 @@
 
 struct termios new, old;
 FILE *file;
+char *fname = NULL;
+int lineno = 0;
 
 void usage(const char *name, FILE *f)
 {
@@ -62,12 +65,12 @@ void print_answer(const char *line, char hlc)
 	printf(RESET "\r");
 }
 
-void get_input(void)
+int get_input(void)
 {
-	int done = 0;
-	while (!done)
+	int c;
+	for (;;)
 	{
-		switch (fgetc(stdin))
+		switch ((c = fgetc(stdin)))
 		{
 		case 3:
 		case 4:
@@ -75,7 +78,8 @@ void get_input(void)
 			exit(0);
 		case ' ':
 		case '\r':
-			done = 1;
+		case 'r':
+			return c;
 			break;
 		default:
 			break;
@@ -83,9 +87,35 @@ void get_input(void)
 	}
 }
 
+void reload_file(void)
+{
+	FILE *tmp;
+	tmp = fopen(fname, "r");
+	if (!tmp)
+	{
+		printf(RED "error reloading file: %s" RESET, strerror(errno));
+		get_input();
+		printf("\x1b[2K\r");
+	}
+	fclose(file);
+	file = tmp;
+
+	char *line = NULL;
+	size_t size;
+	for (int lineno_skip = 0; lineno_skip < lineno - 1; lineno_skip++)
+	{
+		if (getline(&line, &size, file) <= 0)
+			exit(0);
+	}
+	free(line);
+
+	printf(GREEN "file reloaded." RESET);
+	get_input();
+	printf("\x1b[2K\r");
+}
+
 int main(int argc, char **argv)
 {
-	const char *fname;
 	char qc = '*';
 	char hlc = '~';
 
@@ -168,6 +198,7 @@ int main(int argc, char **argv)
 	int is_q = 0;
 	while (getline(&line, &size, file) > 0)
 	{
+		lineno++;
 		if (line[0] == qc)
 		{
 			is_q = 1;
@@ -180,7 +211,11 @@ int main(int argc, char **argv)
 
 		if (is_q)
 		{
-			get_input();
+			if (get_input() == 'r')
+			{
+				reload_file();
+				continue;
+			}
 		}
 
 		print_answer(line, hlc);
