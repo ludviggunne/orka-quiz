@@ -27,12 +27,17 @@ int lineno = 0;
 
 void usage(const char *name, FILE *f)
 {
-	fprintf(f, "usage: %s [-q <question character>] [-h <highlight character>] <file>\n", name);
+	fprintf(f, "Usage: %s [options...] <file>\n", name);
+	fprintf(f, "Options:\n"
+	           "\t-q <character> \tSpecify character to indicate start of a question line (default: '*')\n"
+	           "\t-h <character> \tSpecify character that surrounds a highlighted word (default: '~')\n"
+	           "\t-l <number>    \tSkip to a specific line\n");
 }
 
 void restore_term(void)
 {
 	tcsetattr(STDIN_FILENO, TCSANOW, &old);
+	printf("\n");
 }
 
 void close_file(void)
@@ -68,6 +73,7 @@ void print_answer(const char *line, char hlc)
 int get_input(void)
 {
 	int c;
+	printf("Press <enter> to show answers, <r> to reload file, <q>/<C-c> to exit...");
 	for (;;)
 	{
 		switch ((c = fgetc(stdin)))
@@ -79,6 +85,7 @@ int get_input(void)
 		case ' ':
 		case '\r':
 		case 'r':
+			printf("\x1b[2K\r");
 			return c;
 			break;
 		default:
@@ -118,10 +125,12 @@ int main(int argc, char **argv)
 {
 	char qc = '*';
 	char hlc = '~';
+	int start = 0;
+	char *name = *argv;
 
 	if (argc < 2)
 	{
-		usage(argv[0], stderr);
+		usage(name, stderr);
 		exit(1);
 	}
 
@@ -143,7 +152,7 @@ int main(int argc, char **argv)
 				}
 				if (!arg || strlen(arg) > 1)
 				{
-					usage(argv[0], stderr);
+					usage(name, stderr);
 					exit(1);
 				}
 				qc = *arg;
@@ -157,13 +166,28 @@ int main(int argc, char **argv)
 				}
 				if (!arg || strlen(arg) > 1)
 				{
-					usage(argv[0], stderr);
+					usage(name, stderr);
 					exit(1);
 				}
 				hlc = *arg;
 				break;
+			case 'l':
+				arg++;
+				if (strlen(arg) == 0)
+				{
+					argv++;
+					arg = *argv;
+				}
+				if (!arg)
+				{
+					usage(name, stderr);
+					exit(1);
+				}
+				start = atoi(arg);
+				start--;
+				break;
 			default:
-				usage(argv[0], stderr);
+				usage(name, stderr);
 				exit(1);
 			}
 			continue;
@@ -173,7 +197,7 @@ int main(int argc, char **argv)
 
 	if (!fname)
 	{
-		usage(argv[0], stderr);
+		usage(name, stderr);
 		exit(1);
 	}
 
@@ -199,6 +223,8 @@ int main(int argc, char **argv)
 	while (getline(&line, &size, file) > 0)
 	{
 		lineno++;
+		if (lineno < start)
+			continue;
 		if (line[0] == qc)
 		{
 			is_q = 1;
