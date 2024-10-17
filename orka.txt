@@ -1,0 +1,35 @@
+* Hur lyder det agila manifestet?
+	Individer och interaktioner   framför   processer och verktyg
+	Fungerande programvara        framför   omfattande dokumentation
+	Kundsamarbete                 framför   kontraktsförhandling
+	Anpassning till förändring    framför   att följa en plan
+
+* Vad innebär LEAN?
+	- Eliminera ~slöseri~
+	- Fokusera på ~lärande~
+	- Skjut på ~åtagande~
+	- Leverera ~snabbt~
+	- Respektera ~människor~
+	- Optimera ~helheten~
+
+* Vad kännetecknar projektarbete?
+	- Tydligt mål
+	- Tydlig och avgränsad tidplan
+	- Egen budget
+	- Särskild arbetsform - tillfällig organisation
+
+* En projektplan kan vara mål[...] och mål[...]?
+	- ~Målstyrd~: tydligt slutmål, lätt att utvärdera
+	- ~Målsökande~: delmål med korta mellanrum
+
+* Vad är arbetspaket?
+	Projektarbetet kan delas in i ~arbetspaket~,
+	deluppgifter som har en tydlig tidsomfattning
+	och passar mindre team.
+	
+* Vad innebär WBS/PBC
+	~WBS: Work Breakdown Structure~:
+		Total översikt över ~arbetspaketen~
+
+	~PBC: Product Breakdown Strcture~:
+		Översikt över de delar av projektet som ska genomföras
